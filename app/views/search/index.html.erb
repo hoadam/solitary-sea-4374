@@ -1,0 +1,17 @@
+<h1>Members of <%= @facade.nation %></h1>
+<p>Total Number of People: <%= @facade.members.count %></p>
+
+<h2>List of Members</h2>
+<ul class="members">
+    <% @facade.members.first(25).each do |member| %>
+     <li class="member">
+        <strong>Name:</strong> <%= member.name %><br>
+        <% if member[:photoUrl] %>
+            <%= image_tag member.photoUrl %>
+        <% end %>
+        <strong>Allies:</strong> <%= member.allies.present? ? member.allies.join(', ') : "None" %>
+        <strong>Enemies:</strong> <%= member.enemies.present? ? member.enemies.join(', ') : "None" %>
+        <strong>Affiliatrions:</strong> <%= member.affiliations %>
+     </li>
+    <% end %>
+</ul>
