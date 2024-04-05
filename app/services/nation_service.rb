@@ -1,11 +1,10 @@
 class NationService
   def members_by_nation(nation)
-    get_url("characters?affiliation=#{nation}")
+    get_url("characters?affiliation=#{nation}&perPage=500")
   end
 
   def get_url(url, params = {})
     response = conn.get(url, params)
-    #binding.pry
     JSON.parse(response.body, symbolize_names: true)
   end
 
