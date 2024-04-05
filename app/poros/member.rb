@@ -1,13 +1,13 @@
 class Member
-  attr_reader :id,
+  attr_reader :_id,
               :name,
               :allies,
               :enemies,
               :photoUrl,
               :affiliation
 
-  def initialize(id:, name:, allies:, enemies:, photoUrl:, affiliation:)
-    @id = id
+  def initialize(_id:, name:, allies: [], enemies: [], photoUrl: "", affiliation: "")
+    @_id = _id
     @name = name
     @allies = allies
     @enemies = enemies

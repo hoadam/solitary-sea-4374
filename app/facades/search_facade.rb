@@ -10,7 +10,7 @@ class SearchFacade
 
     json = service.members_by_nation(@nation)
     json.map do |member_data|
-      Member.new(member_data)
+      Member.new(**member_data)
     end
   end
 end
